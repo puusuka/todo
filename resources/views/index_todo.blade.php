@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>todoアプリ</title>
+  @livewireStyles
 </head>
 <style>
 body{
@@ -138,17 +139,7 @@ body{
      <div class="card">
         <p>Todo List</p>
       <div class="new">
-      <form action="/todo/update" method="post" >
-           @if (count($errors) > 0)
-              @error('name')
-                <li>{{$message}}</li>
-              @enderror
-            @endif
-          @csrf
-           
-            <input type="text" class="input-update" value= "" name="name">
-            <input type="submit" name="submit" value="追加" class="update" />
-          </form>
+      @livewire('fruit')
       </div>
        <div class="table">
         <table class="ProductTable">
@@ -185,5 +176,6 @@ body{
        </div> 
      </div>
   </div>
+@livewireScripts
 </body>
 </html>
